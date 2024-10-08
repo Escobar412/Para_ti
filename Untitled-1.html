@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una página especial para ti</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #FADADD;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #4B0082;
+        }
+        #frases {
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            max-width: 600px;
+        }
+        .texto-animado p {
+            font-size: 1.5em;
+            animation: fadeIn 3s infinite;
+            color: #8B008B;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Mejor diseño de las rosas */
+        .rosa {
+            position: relative;
+            display: inline-block;
+            margin: 0 20px;
+            width: 100px;
+            height: 200px;
+            animation: swing 3s ease-in-out infinite;
+        }
+
+        @keyframes swing {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        /* Pétalos */
+        .petalo {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            background: radial-gradient(circle at top left, #FF69B4, #FF1493);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Pétalos adicionales con rotación */
+        .petalo1 {
+            top: -30px;
+            left: 20px;
+            transform: rotate(0deg); /* Rotación inicial */
+        }
+
+        .petalo2 {
+            top: -10px;
+            left: 60px;
+            transform: rotate(45deg); /* Rotación a 45 grados */
+        }
+
+        .petalo3 {
+            top: -10px;
+            left: -20px;
+            transform: rotate(-45deg); /* Rotación a -45 grados */
+        }
+
+        .petalo4 {
+            top: 30px;
+            left: 70px;
+            transform: rotate(90deg); /* Rotación a 90 grados */
+        }
+
+        .petalo7 {
+            top: 50px;
+            left: -20px;
+            transform: rotate(45deg); /* Rotación a 45 grados */
+        }
+
+        .petalo8 {
+            top: 50px;
+            left: 60px;
+            transform: rotate(-45deg); /* Rotación a -45 grados */
+        }
+
+        .petalo5 {
+            top: 30px;
+            left: -30px;
+            transform: rotate(-90deg); /* Rotación a -90 grados */
+        }
+
+        .petalo6 {
+            top: 70px;
+            left: 20px;
+            transform: rotate(0deg); /* Rotación inicial */
+        }
+
+        /* Centro */
+        .centro {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #fffb00, #FF69B4);
+            border-radius: 50%;
+            top: 40px;
+            left: 30px;
+            z-index: 2;
+        }
+
+        /* Tallo de la rosa */
+        .tallo {
+            position: absolute;
+            top: 80px;
+            left: 48px;
+            width: 6px;
+            height: 120px;
+            background-color: #228B22;
+            z-index: 0;
+        }
+
+        /* Hojas */
+        .hoja {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background-color: #228B22;
+            border-radius: 50%;
+        }
+
+        .hoja1 {
+            top: 160px;
+            left: 50px;
+            transform: rotate(-30deg);
+        }
+
+        .hoja2 {
+            top: 140px;
+            right: 50px;
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Para mi usted es la mujer más hermosa</h1>
+
+    <!-- Rosas con pétalos ajustados -->
+    <div class="rosas">
+        <div class="rosa">
+            <div class="petalo petalo1"></div>
+            <div class="petalo petalo2"></div>
+            <div class="petalo petalo3"></div>
+            <div class="petalo petalo4"></div>
+            <div class="petalo petalo7"></div>
+            <div class="petalo petalo8"></div>
+            <div class="petalo petalo5"></div>
+            <div class="petalo petalo6"></div>
+            <div class="centro"></div>
+            <div class="tallo"></div>
+            <div class="hoja hoja1"></div>
+            <div class="hoja hoja2"></div>
+        </div>
+    </div>
+
+    <!-- Frases cambiantes -->
+    <div id="frases">
+        <h2 id="frase-del-dia"></h2>
+    </div>
+
+    <script>
+        const frases = [
+            "Cada vez que la veo me pierdo en su mirada, bella inigualable, única para mi no existe nadie más como usted"
+        ];
+
+        document.getElementById("frase-del-dia").innerHTML = frases[Math.floor(Math.random() * frases.length)];
+    </script>
+
+    <!-- Texto animado -->
+    <div class="texto-animado">
+        <p>Usted es importante para mi.</p>
+    </div>
+
+</body>
+</html>
